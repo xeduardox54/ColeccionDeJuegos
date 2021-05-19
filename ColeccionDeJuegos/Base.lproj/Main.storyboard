@@ -30,11 +30,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="HK3-hQ-y6u">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0F5-jK-1Gy">
-                            <connections>
-                                <segue destination="Kwd-l9-Whq" kind="show" id="6TI-UR-dwr"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="0F5-jK-1Gy">
+                                <connections>
+                                    <segue destination="Kwd-l9-Whq" kind="show" identifier="juegoSegue" id="6TI-UR-dwr"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Editar" id="4x1-dd-Vaf">
+                                <connections>
+                                    <action selector="editar:" destination="BYZ-38-t0r" id="EaR-No-5B9"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="859-Sp-ICR" id="3UE-fE-lCs"/>
@@ -61,26 +68,77 @@
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingrese titulo" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dg9-ws-3qs">
                                 <rect key="frame" x="67" y="290" width="280" height="34"/>
+                                <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pAd-Pp-g74">
+                                <rect key="frame" x="179.5" y="620" width="55" height="30"/>
+                                <state key="normal" title="Eliminar"/>
+                                <connections>
+                                    <action selector="eliminarTapped:" destination="Kwd-l9-Whq" eventType="touchUpInside" id="JZM-zV-XjN"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AzI-zz-bk9">
-                                <rect key="frame" x="179.5" y="344" width="55" height="30"/>
+                                <rect key="frame" x="179.5" y="575" width="55" height="30"/>
                                 <state key="normal" title="Agregar"/>
                                 <connections>
                                     <action selector="agregarTapped:" destination="Kwd-l9-Whq" eventType="touchUpInside" id="ZlB-ro-baq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcK-E8-vvU">
+                                <rect key="frame" x="67" y="344" width="280" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Selecciona genero"/>
+                                <connections>
+                                    <action selector="onClickDropButton:" destination="Kwd-l9-Whq" eventType="touchUpInside" id="Mgr-pU-jUw"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pd5-lZ-Duw">
+                                <rect key="frame" x="67" y="382" width="280" height="173"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="173" id="hpn-qe-ag1"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="Ppk-mf-LpR" style="IBUITableViewCellStyleDefault" id="M7k-Al-IxJ">
+                                        <rect key="frame" x="0.0" y="28" width="280" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M7k-Al-IxJ" id="0QB-51-ap5">
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ppk-mf-LpR">
+                                                    <rect key="frame" x="16" y="0.0" width="248" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Pd5-lZ-Duw" firstAttribute="leading" secondItem="RcK-E8-vvU" secondAttribute="leading" id="27m-Rm-MNs"/>
+                            <constraint firstItem="AzI-zz-bk9" firstAttribute="top" secondItem="Pd5-lZ-Duw" secondAttribute="bottom" constant="20" id="8Dd-Qy-zyW"/>
                             <constraint firstItem="yeV-QB-rU9" firstAttribute="top" secondItem="CKR-n8-Ab0" secondAttribute="top" constant="32" id="9MC-gb-cGF"/>
+                            <constraint firstItem="pAd-Pp-g74" firstAttribute="top" secondItem="AzI-zz-bk9" secondAttribute="bottom" constant="15" id="9fV-V7-rgK"/>
                             <constraint firstItem="Dg9-ws-3qs" firstAttribute="width" secondItem="yeV-QB-rU9" secondAttribute="width" id="CWG-zr-GGe"/>
-                            <constraint firstItem="AzI-zz-bk9" firstAttribute="top" secondItem="Dg9-ws-3qs" secondAttribute="bottom" constant="20" id="Sm4-G7-eec"/>
+                            <constraint firstItem="RcK-E8-vvU" firstAttribute="top" secondItem="Dg9-ws-3qs" secondAttribute="bottom" constant="20" id="L2u-3B-Vur"/>
                             <constraint firstItem="Dg9-ws-3qs" firstAttribute="centerX" secondItem="pOd-jo-vZA" secondAttribute="centerX" id="Te4-ca-c2L"/>
+                            <constraint firstItem="Pd5-lZ-Duw" firstAttribute="leading" secondItem="Dg9-ws-3qs" secondAttribute="leading" id="gH3-C5-kY8"/>
+                            <constraint firstItem="Pd5-lZ-Duw" firstAttribute="trailing" secondItem="RcK-E8-vvU" secondAttribute="trailing" id="gQE-jM-fgb"/>
                             <constraint firstItem="Dg9-ws-3qs" firstAttribute="top" secondItem="yeV-QB-rU9" secondAttribute="bottom" constant="20" id="hPC-OQ-woE"/>
+                            <constraint firstItem="pAd-Pp-g74" firstAttribute="centerX" secondItem="pOd-jo-vZA" secondAttribute="centerX" id="mFy-Rr-O5M"/>
+                            <constraint firstItem="Pd5-lZ-Duw" firstAttribute="top" secondItem="RcK-E8-vvU" secondAttribute="bottom" constant="8" id="piY-Po-tuV"/>
                             <constraint firstItem="AzI-zz-bk9" firstAttribute="centerX" secondItem="pOd-jo-vZA" secondAttribute="centerX" id="sQx-i4-CYl"/>
                             <constraint firstItem="yeV-QB-rU9" firstAttribute="centerX" secondItem="Dg9-ws-3qs" secondAttribute="centerX" id="yNH-tp-fK3"/>
+                            <constraint firstItem="RcK-E8-vvU" firstAttribute="width" secondItem="Dg9-ws-3qs" secondAttribute="width" id="zBe-VO-lBp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CKR-n8-Ab0"/>
                     </view>
@@ -100,6 +158,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="JuegoImagenView" destination="yeV-QB-rU9" id="bPJ-uf-M4c"/>
+                        <outlet property="agregarActualizarBoton" destination="AzI-zz-bk9" id="P37-WV-2H8"/>
+                        <outlet property="btnDrop" destination="RcK-E8-vvU" id="9HL-fM-Mbv"/>
+                        <outlet property="eliminarBoton" destination="pAd-Pp-g74" id="USF-lb-U1g"/>
+                        <outlet property="tableView" destination="Pd5-lZ-Duw" id="Amo-OY-t8P"/>
                         <outlet property="tituloTextField" destination="Dg9-ws-3qs" id="cpF-oZ-2W9"/>
                     </connections>
                 </viewController>
