@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0D0A76A265488060076843D /* JuegosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D0A769265488060076843D /* JuegosViewController.swift */; };
 		A0E40BA3264C648F00107DE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E40BA2264C648F00107DE5 /* AppDelegate.swift */; };
 		A0E40BA5264C648F00107DE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E40BA4264C648F00107DE5 /* SceneDelegate.swift */; };
 		A0E40BA7264C648F00107DE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E40BA6264C648F00107DE5 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A0D0A769265488060076843D /* JuegosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuegosViewController.swift; sourceTree = "<group>"; };
 		A0E40B9F264C648F00107DE5 /* ColeccionDeJuegos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColeccionDeJuegos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E40BA2264C648F00107DE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0E40BA4264C648F00107DE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				A0E40BA4264C648F00107DE5 /* SceneDelegate.swift */,
 				A0E40BA6264C648F00107DE5 /* ViewController.swift */,
 				A0E40BA8264C648F00107DE5 /* Main.storyboard */,
+				A0D0A769265488060076843D /* JuegosViewController.swift */,
 				A0E40BAE264C649500107DE5 /* Assets.xcassets */,
 				A0E40BB0264C649500107DE5 /* LaunchScreen.storyboard */,
 				A0E40BB3264C649500107DE5 /* Info.plist */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0D0A76A265488060076843D /* JuegosViewController.swift in Sources */,
 				A0E40BA7264C648F00107DE5 /* ViewController.swift in Sources */,
 				A0E40BA3264C648F00107DE5 /* AppDelegate.swift in Sources */,
 				A0E40BA5264C648F00107DE5 /* SceneDelegate.swift in Sources */,
